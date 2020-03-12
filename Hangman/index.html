@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HANGMAN</title>
+    <script src = "js/script.js"></script>
+    <link rel = "stylesheet" href = "style/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+</head>
+<body onload = "onLoad()">
+<h1 id = "hangman">HANGMAN</h1>
+
+
+<div class="dropdown" id = "image">
+<button class="dropbtn">Choose Theme</button>
+<div class="dropdown-content">
+    <a href="#" onclick = "chooseImage(1)">Regular</a>
+    <a href="#" onclick = "chooseImage(2)">SpongeBob</a>
+    <a href="#" onclick = "chooseImage(3)">Pokemon</a>
+    <a href="#" onclick = "chooseImage(4)">Looney Tunes</a>
+</div>
+</div>
+
+
+
+<div class="dropdown" id = "type">
+    <button class="dropbtn">Choose Gamemode</button>
+    <div class="dropdown-content">
+        <a href="#" onclick = "chooseGameMode(1)">1 Player</a>
+        <a href="#" onclick = "chooseGameMode(2)">2 Players</a>
+        <a href="#" onclick = "chooseGameMode(3)">3 Players</a>
+        <a href="#" onclick = "chooseGameMode(4)">4 Players</a>
+    </div>
+</div>
+
+<input type = "button" id = "ins" value = "INSTRUCTIONS" onclick = "help()">
+
+    <div id = "dif">
+        <p id = "difficulty">Choose the Difficulty:</p>
+        <input type = "button" onclick = "Dif(1)" value = "Easy" class = "btn2" id = "aa">
+        <input type = "button" onclick = "Dif(2)" value = "Medium" class = "btn2" id = "ab" >
+        <input type = "button" onclick = "Dif(3)" value = "Hard" class = "btn2" id = "ac">
+        <input type = "button" onclick = "Dif(4)" value = "Impossible" class = "btn2" id = "ad">
+    </div>
+    <div id = "menu">
+        <!--<input type = "button" onclick = "start()" value = "Start" class = "btn">-->
+        <input type = "button" onclick = "Guess()" value = "Make Guess" class = 'btn'>
+        <input type = "button" onclick = "Reset()" value = "RESTART" class = 'btn' id = 'reset'>
+        <input type = "button" onclick = "resetAll()" value = "RESTART ALL" class = 'btn'>
+        <!--<input type = "button" onclick = "Help()" value = "HELP" class = 'btn'>-->
+    </div>
+
+
+
+
+
+<div id = "info">
+    <p id = "category" class = "info">Category:</p>
+    <p id = 'lives'  class = "info">Lives: 7</p>
+
+    <p class = "info">Missed Letters:</p>
+    <p id = "misses" class = "info" ></p>
+
+    <p id = "won" class = "info" >Games won:</p>
+
+    <p id = "lost" class = "info" >Games lost:</p>
+</div>
+
+<div id = "allScores">
+    <p id = "score1" class = "info" >Player 1 Score:</p>
+
+    <br>
+    <p id = "score2" class = "info" >Player 2 Score:</p>
+
+    <br>
+    <p id = "score3" class = "info" >Player 3 Score:</p>
+
+    <br>
+    <p id = "score4" class = "info" >Player 4 Score:</p>
+</div>
+
+
+
+
+
+
+    <br>
+<div id = "guesses">
+    <p id = "typeGuess">Type Your Guess Here</p>
+    <input type = "text" id = "user" value = "" class = "typeGuess" onkeydown= "keyDown(event)"> <!--text box-->
+
+    <br>
+
+    <p id = "text" class = "typeGuess"></p> <!--actual word with "_ _ _ _"-->
+</div>
+
+<br>
+<h1 id = "header"></h1>
+
+<img src="resources/File_000.png" id = "picture" width = 500px height = 600px>
+
+
+</body>
+</html>
+
